@@ -26,6 +26,7 @@
 		1911CC871F7CB94C00E23342 /* GameTournamentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911CC861F7CB94C00E23342 /* GameTournamentsView.swift */; };
 		1911CC8A1F7D718300E23342 /* TournamentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911CC891F7D718300E23342 /* TournamentsController.swift */; };
 		1911CC8D1F7D795500E23342 /* CreateTournamentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911CC8C1F7D795500E23342 /* CreateTournamentController.swift */; };
+		191681C41F8123D3003D2383 /* CreateTournamentPictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191681C31F8123D3003D2383 /* CreateTournamentPictureController.swift */; };
 		191BCFFB1F59C803005621E7 /* OpenGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191BCFFA1F59C803005621E7 /* OpenGroupController.swift */; };
 		191BCFFD1F59CC12005621E7 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191BCFFC1F59CC12005621E7 /* Group.swift */; };
 		191BD0011F5A82B4005621E7 /* GroupInvitationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191BD0001F5A82B4005621E7 /* GroupInvitationUpdate.swift */; };
@@ -110,6 +111,7 @@
 		19CA15C01F46288500593842 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA15BF1F46288500593842 /* GamesView.swift */; };
 		19CA15C21F4630CF00593842 /* TeamGamesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA15C11F4630CF00593842 /* TeamGamesCell.swift */; };
 		19CF2ECE1F49B27800CA319B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CF2ECD1F49B27800CA319B /* SettingsController.swift */; };
+		19D4F7AB1F80C83500BF87C5 /* TournamentDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4F7AA1F80C83500BF87C5 /* TournamentDateView.swift */; };
 		19D67EAA1F2EF8D700AC3A33 /* ColorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D67EA91F2EF8D700AC3A33 /* ColorCodes.swift */; };
 		19D67EAC1F2F053600AC3A33 /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D67EAB1F2F053600AC3A33 /* MessagesCell.swift */; };
 		19D67EAE1F2F063E00AC3A33 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D67EAD1F2F063E00AC3A33 /* MessageCell.swift */; };
@@ -158,6 +160,7 @@
 		1911CC861F7CB94C00E23342 /* GameTournamentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTournamentsView.swift; sourceTree = "<group>"; };
 		1911CC891F7D718300E23342 /* TournamentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsController.swift; sourceTree = "<group>"; };
 		1911CC8C1F7D795500E23342 /* CreateTournamentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTournamentController.swift; sourceTree = "<group>"; };
+		191681C31F8123D3003D2383 /* CreateTournamentPictureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTournamentPictureController.swift; sourceTree = "<group>"; };
 		191BCFFA1F59C803005621E7 /* OpenGroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenGroupController.swift; sourceTree = "<group>"; };
 		191BCFFC1F59CC12005621E7 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		191BD0001F5A82B4005621E7 /* GroupInvitationUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupInvitationUpdate.swift; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 		19CA15BF1F46288500593842 /* GamesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		19CA15C11F4630CF00593842 /* TeamGamesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamGamesCell.swift; sourceTree = "<group>"; };
 		19CF2ECD1F49B27800CA319B /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		19D4F7AA1F80C83500BF87C5 /* TournamentDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDateView.swift; sourceTree = "<group>"; };
 		19D67EA91F2EF8D700AC3A33 /* ColorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCodes.swift; sourceTree = "<group>"; };
 		19D67EAB1F2F053600AC3A33 /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
 		19D67EAD1F2F063E00AC3A33 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -539,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				1911CC8C1F7D795500E23342 /* CreateTournamentController.swift */,
+				191681C31F8123D3003D2383 /* CreateTournamentPictureController.swift */,
 				194AE4591F7DFEB4006D5A62 /* CreateTournamentNameDateController.swift */,
 				1960EBEE1F7F79B800DD93EB /* CreateTournamentRegistrationController.swift */,
 			);
@@ -567,6 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				1960EBF11F7F7FA900DD93EB /* TournamentBasicsView.swift */,
+				19D4F7AA1F80C83500BF87C5 /* TournamentDateView.swift */,
 			);
 			name = Tournaments;
 			sourceTree = "<group>";
@@ -1014,6 +1020,7 @@
 				190671AB1F373000005E6339 /* SelectUserController.swift in Sources */,
 				191BCFFD1F59CC12005621E7 /* Group.swift in Sources */,
 				19E2EC2D1F2FBEF3001315BC /* ChatLogController.swift in Sources */,
+				191681C41F8123D3003D2383 /* CreateTournamentPictureController.swift in Sources */,
 				1942F3651F70CE80000EA7C8 /* PaymentSettingsController.swift in Sources */,
 				19CA15C21F4630CF00593842 /* TeamGamesCell.swift in Sources */,
 				19314B451F3E305000B6D9F7 /* OnlineCell.swift in Sources */,
@@ -1056,6 +1063,7 @@
 				191BD0061F5A897B005621E7 /* CustomAnimationDismisser.swift in Sources */,
 				19FB0E2E1F76439C005EEECC /* ChooseGamesHeader.swift in Sources */,
 				19953DE01F44904F00409195 /* MyGamesCell.swift in Sources */,
+				19D4F7AB1F80C83500BF87C5 /* TournamentDateView.swift in Sources */,
 				198F725C1F52088E009DA886 /* Updater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

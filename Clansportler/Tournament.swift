@@ -10,8 +10,8 @@ import UIKit
 import Firebase
 
 enum TournamentPlayerType {
-    case clans
-    case players
+    case teams
+    case player
 }
 
 class Tournament {
@@ -21,8 +21,11 @@ class Tournament {
     var fullName: String
     
     var gameId: String?
+    var teamSize: Int?
     
     var playerType: TournamentPlayerType?
+    
+    var tournamentImageUrl: String?
     
     init(id: String, values: [String: Any]) {
         self.id = id
@@ -31,7 +34,28 @@ class Tournament {
         
         self.gameId = values["gameId"] as? String
         
+        self.tournamentImageUrl = values["tournamentImageUrl"] as? String
+        
         self.playerType = values["playerType"] as? TournamentPlayerType
+        if let teamSize = values["teamSize"] as? Int {
+            self.teamSize = teamSize
+            if teamSize > 1 {
+                self.playerType = .teams
+            } else {
+                self.playerType = .player
+            }
+        }
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+

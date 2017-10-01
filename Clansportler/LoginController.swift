@@ -29,6 +29,7 @@ enum OnboardingTitle: String {
     case groups = "Play in Groups"
     case clans = "Join a Clan"
     case tournaments = "Win Tournaments"
+    case beta = "We're in Beta"
     
     
     case onboardingWelcome = "Welcome"
@@ -45,8 +46,9 @@ class LoginController: UICollectionViewController, UICollectionViewDelegateFlowL
         let groupPoint = OnboardingPoint(name: .groups, image: #imageLiteral(resourceName: "onboarding_groups"), subtitle: "Join a group and play your favorite games with others together.")
         let clanPoint = OnboardingPoint(name: .clans, image: #imageLiteral(resourceName: "keyboard_onboarding"), subtitle: "Create or join a clan and stay updated about your friends.")
         let tournamentsPoint = OnboardingPoint(name: .tournaments, image: #imageLiteral(resourceName: "Onboarding_grid-1"), subtitle: "Play Tournaments and win prizes, earn some money and get rewards.")
+        let betaPoint = OnboardingPoint(name: .beta, image: #imageLiteral(resourceName: "BetaSportler"), subtitle: "This is the Beta Version, so please forgive us, if features won't work.")
         
-        return [groupPoint, clanPoint, tournamentsPoint]
+        return [groupPoint, clanPoint, tournamentsPoint, betaPoint]
     }()
     
     override func viewDidLoad() {
@@ -123,7 +125,7 @@ class LoginController: UICollectionViewController, UICollectionViewDelegateFlowL
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = UIColor(white: 1, alpha: 0.5)
         pc.currentPageIndicatorTintColor = UIColor.white
-        pc.numberOfPages = 3
+        pc.numberOfPages = 4
         return pc
     }()
     

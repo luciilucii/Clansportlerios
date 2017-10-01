@@ -13,17 +13,12 @@ class CreateTournamentNameDateController: ScrollController/*, UIPickerViewDelega
     
     var values: [String: Any]? {
         didSet {
-            guard let imageUrl = values?["gameImageUrl"] as? String else { return }
+            guard let imageUrl = values?["tournamentImageUrl"] as? String else { return }
             gameImageView.loadImage(urlString: imageUrl)
         }
     }
     
-    var timestampDate: Date? {
-        didSet {
-            nextButton.isEnabled = true
-            nextButton.backgroundColor = ColorCodes.clansportlerRed
-        }
-    }
+    var timestampDate: Date?
     
     lazy var datePickerView: UIDatePicker = {
         let picker = UIDatePicker()
@@ -57,6 +52,7 @@ class CreateTournamentNameDateController: ScrollController/*, UIPickerViewDelega
         tf.layer.cornerRadius = 5
         tf.setLeftPaddingPoints(5)
         tf.setRightPaddingPoints(5)
+        tf.addTarget(self, action: #selector(handleInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -78,6 +74,30 @@ class CreateTournamentNameDateController: ScrollController/*, UIPickerViewDelega
         tf.layer.cornerRadius = 5
         tf.setLeftPaddingPoints(5)
         tf.setRightPaddingPoints(5)
+        tf.addTarget(self, action: #selector(handleInputChange), for: .editingChanged)
+        return tf
+    }()
+    
+    let teamTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Team Size (Between 1-5)"
+        label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }()
+    
+    lazy var teamTextField: UITextField = {
+        let tf = UITextField()
+        tf.textColor = UIColor.white
+        tf.backgroundColor = .clear
+        tf.placeholder = "Size"
+        tf.tintColor = UIColor.white
+        tf.autocorrectionType = .no
+        tf.layer.cornerRadius = 5
+        tf.setLeftPaddingPoints(5)
+        tf.setRightPaddingPoints(5)
+        tf.keyboardType = .numberPad
+        tf.addTarget(self, action: #selector(handleInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -109,6 +129,8 @@ class CreateTournamentNameDateController: ScrollController/*, UIPickerViewDelega
         scrollContainerView.addSubview(dateTextField)
         scrollContainerView.addSubview(organizerTitleLabel)
         scrollContainerView.addSubview(organizerTextField)
+        scrollContainerView.addSubview(teamTitleLabel)
+        scrollContainerView.addSubview(teamTextField)
         scrollContainerView.addSubview(nextButton)
         
         dateTextField.inputView = datePickerView
@@ -123,7 +145,11 @@ class CreateTournamentNameDateController: ScrollController/*, UIPickerViewDelega
         
         organizerTextField.anchor(top: organizerTitleLabel.bottomAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 35)
         
-        nextButton.anchor(top: organizerTextField.bottomAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 50)
+        teamTitleLabel.anchor(top: organizerTextField.bottomAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 25)
+        
+        teamTextField.anchor(top: teamTitleLabel.bottomAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 35)
+        
+        nextButton.anchor(top: teamTextField.bottomAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 50)
         
     }
     
@@ -141,14 +167,27 @@ class CreateTournamentNameDateController: ScrollController/*, UIPickerViewDelega
         let timestamp = date.timeIntervalSince1970
         
         let organizer = self.organizerTextField.text ?? ""
+        guard let teamSizeString = teamTextField.text else { return }
+        guard let teamSize = Int(teamSizeString) else { return }
         
         var values = self.values
-        values?["timestamp"] = timestamp
+        values?["tournamentTimestamp"] = timestamp
         values?["organizer"] = organizer
+        values?["teamSize"] = teamSize
         
         let createTournamentRegistrationController = CreateTournamentRegistrationController()
         createTournamentRegistrationController.values = values
         self.show(createTournamentRegistrationController, sender: self)
+    }
+    
+    @objc func handleInputChange() {
+        if dateTextField.text?.characters.count ?? 0 > 0 && organizerTextField.text?.characters.count ?? 0 > 0 && teamTextField.text?.characters.count ?? 0 > 0 {
+            nextButton.isEnabled = true
+            nextButton.backgroundColor = ColorCodes.clansportlerRed
+        } else {
+            nextButton.isEnabled = false
+            nextButton.backgroundColor = ColorCodes.disabledRed
+        }
     }
     
 }

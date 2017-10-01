@@ -1,0 +1,6 @@
+framework module Pods_Clansportler {
+  umbrella header "Pods-Clansportler-umbrella.h"
+
+  export *
+  module * { export * }
+}

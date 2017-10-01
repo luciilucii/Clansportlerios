@@ -89,7 +89,7 @@ class CreateTournamentController: ScrollController, UIPickerViewDelegate, UIPick
     
     let playerLabel: UILabel = {
         let label = UILabel()
-        label.text = "How many players should participate?"
+        label.text = "How many players/teams can participate?"
         label.textColor = UIColor.white
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
@@ -101,12 +101,13 @@ class CreateTournamentController: ScrollController, UIPickerViewDelegate, UIPick
         tf.backgroundColor = .clear
 //        tf.layer.borderColor = UIColor.white.cgColor
 //        tf.layer.borderWidth = 1
-        tf.placeholder = "Number of Players"
+        tf.placeholder = "Number of Players/Teams"
         tf.tintColor = UIColor.white
         tf.autocorrectionType = .no
         tf.layer.cornerRadius = 5
         tf.setLeftPaddingPoints(5)
         tf.setRightPaddingPoints(5)
+        tf.keyboardType = .numberPad
         tf.addTarget(self, action: #selector(handleInputChange), for: .editingChanged)
         return tf
     }()
@@ -222,9 +223,9 @@ class CreateTournamentController: ScrollController, UIPickerViewDelegate, UIPick
             
             let values: [String: Any] = ["playerCount": playerCountDouble, "shortName": shortTitle, "fullName": fullTitle, "gameId": game.id, "gameImageUrl": gameImageUrl]
             
-            let createTournamentNameDateController = CreateTournamentNameDateController()
-            createTournamentNameDateController.values = values
-            self.show(createTournamentNameDateController, sender: self)
+            let createTournamentPictureController = CreateTournamentPictureController()
+            createTournamentPictureController.values = values
+            self.show(createTournamentPictureController, sender: self)
         }
     }
     
