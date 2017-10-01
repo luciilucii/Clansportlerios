@@ -205,7 +205,6 @@ class CreateTournamentRegistrationController: ScrollController, UIPickerViewDele
             } else {
                 self.dismiss(animated: true, completion: {
                     //completion here
-//                    test
                 })
             }
         }
